@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vallunga RC Track — Piea (AT)</title>
+<meta name="description" content="Vallunga RC Track — pista outdoor 1/10 elettrico a Piea (AT), a circa 50 minuti da Torino.">
+<style>
+:root{--bg:#080b09;--panel:#111612;--text:#f4f5ef;--muted:#aab2a9;--accent:#b8dc38;--line:#29312a;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+
+/* Header & Nav */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(8,10,9,.8);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.12);transition:all 0.3s ease}
+.nav{min-height:70px;padding:8px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}
+.logo{font-weight:900;letter-spacing:.04em;font-size:1.15rem;transition:transform 0.3s ease;white-space:nowrap}
+.logo:hover{transform:scale(1.03)}
+.logo span{color:var(--accent)}
+nav{display:flex;align-items:center;gap:20px;font-size:.9rem;flex-wrap:wrap}
+nav a{position:relative;padding-bottom:4px;opacity:.86;transition:all 0.3s ease;white-space:nowrap}
+nav a::after{content:"";position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--accent);transition:width 0.3s ease}
+nav a:hover{opacity:1;color:var(--accent)}
+nav a:hover::after{width:100%}
+nav a.active{opacity:1;color:var(--accent)}
+nav a.active::after{width:100%}
+
+/* Selettore lingua */
+.lang-switch{display:flex;align-items:center;gap:2px;border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:3px;flex-shrink:0}
+.lang-btn{background:transparent;border:none;color:var(--muted);font-weight:800;font-size:.72rem;letter-spacing:.04em;padding:5px 11px;border-radius:16px;cursor:pointer;transition:all 0.3s ease;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:#10130d}
+.lang-btn:hover:not(.active){color:var(--text)}
+
+/* Hero Section - Spazio ridotto */
+.hero{min-height:100svh;display:flex;align-items:flex-end;position:relative;overflow:hidden;animation:fadeIn 1.2s ease-out}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;z-index:1;background-image:linear-gradient(90deg,rgba(0,0,0,.74),rgba(0,0,0,.22)),linear-gradient(0deg,rgba(0,0,0,.9),transparent 60%);pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:82px 0 60px;max-width:980px;animation:slideUp 1s ease-out 0.3s both}
+.kicker{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.92rem;margin-bottom:16px}
+h1{font-size:clamp(3.6rem,10vw,10rem);line-height:.88;letter-spacing:-.055em;text-transform:uppercase;font-weight:950;text-shadow:0 4px 25px rgba(0,0,0,.35)}
+.hero p{margin-top:22px;max-width:720px;color:#e0e4dc;font-size:1.3rem}
+.hero-tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-tags .tag{padding:9px 18px;border:1px solid rgba(255,255,255,.28);border-radius:20px;font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;background:rgba(255,255,255,.06);backdrop-filter:blur(4px)}
+
+/* Pulsanti */
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{padding:13px 22px;border:1px solid rgba(255,255,255,.28);border-radius:7px;font-weight:800;font-size:.9rem;background:rgba(0,0,0,.3);backdrop-filter:blur(4px);transition:all 0.3s ease;display:inline-flex;align-items:center;justify-content:center}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.4);border-color:rgba(255,255,255,0.6)}
+.btn.primary{background:var(--accent);color:#10130d;border-color:var(--accent)}
+.btn.primary:hover{background:#c6e846;border-color:#c6e846;box-shadow:0 8px 25px rgba(184, 220, 56, 0.4)}
+
+/* Layout Sezioni */
+section{padding:90px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px;flex-wrap:wrap}
+.eyebrow{color:var(--accent);font-size:.75rem;text-transform:uppercase;font-weight:900;letter-spacing:.14em}
+h2{font-size:clamp(2rem,5vw,4rem);line-height:1;letter-spacing:-.04em;text-transform:uppercase;margin-top:8px}
+.section-head p{max-width:430px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:16px}
+
+/* Card Interattive */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px;min-height:190px;transition:all 0.3s ease}
+.card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 10px 30px rgba(184, 220, 56, 0.1);background:#151c16}
+.card strong{display:block;font-size:1.5rem;margin-bottom:10px}
+.card p{color:var(--muted)}
+
+/* Lista Contatti */
+.contact-list{margin-top:20px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.contact-item{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.95rem}
+.contact-item a:hover{color:var(--accent);text-decoration:underline}
+
+/* Aperture / News */
+.an-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.an-block{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px;transition:all 0.3s ease}
+.an-block:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 10px 30px rgba(184, 220, 56, 0.1);background:#151c16}
+.an-block h3{font-size:1.1rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:18px}
+.apertura-list{display:flex;flex-direction:column;gap:10px}
+.apertura-item{background:#0d120e;border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-weight:600;transition:all 0.3s ease}
+.apertura-item:hover{border-color:var(--accent);background:#12180f;transform:translateX(4px)}
+.news-text{color:var(--text);font-size:1.05rem;line-height:1.7}
+@media(max-width:760px){.an-grid{grid-template-columns:1fr}}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:1.45fr 1fr 1fr;grid-template-rows:250px 250px;gap:12px}
+.photo{border-radius:12px;overflow:hidden;position:relative;background:#222;box-shadow:0 8px 25px rgba(0,0,0,.2);cursor:pointer}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease, filter 0.6s ease}
+.photo:hover img{transform:scale(1.06);filter:brightness(1.1)}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.62))}
+.photo span{position:absolute;z-index:1;bottom:16px;left:16px;font-weight:800;letter-spacing:.04em}
+.photo.big{grid-row:span 2}
+.photo.big img{object-position:center center}
+.photo.buggy img{object-position:center 48%}
+
+/* Lightbox album */
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(4,6,4,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:40px;backdrop-filter:blur(6px)}
+.lightbox.open{display:flex}
+.lightbox-img{max-width:min(92vw,1100px);max-height:74vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);object-fit:contain}
+.lightbox-caption{margin-top:18px;color:var(--text);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:1rem}
+.lightbox-counter{margin-top:6px;color:var(--muted);font-size:.8rem}
+.lightbox-close{position:absolute;top:22px;right:28px;background:transparent;border:none;color:var(--text);font-size:2.4rem;line-height:1;cursor:pointer;transition:color 0.3s ease}
+.lightbox-close:hover{color:var(--accent)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:var(--text);width:48px;height:48px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease}
+.lightbox-nav:hover{background:var(--accent);color:#10130d;border-color:var(--accent)}
+.lightbox-nav.prev{left:20px}
+.lightbox-nav.next{right:20px}
+@media(max-width:760px){
+  .lightbox{padding:18px}
+  .lightbox-nav{width:40px;height:40px;font-size:1.05rem}
+  .lightbox-nav.prev{left:6px}
+  .lightbox-nav.next{right:6px}
+  .lightbox-close{top:12px;right:16px;font-size:2rem}
+}
+
+/* Prezzi / Info */
+.info{background:#e9ece3;color:#11150f}
+.info .section-head p{color:#596058}
+.info-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.price{font-size:3rem;font-weight:900;line-height:1}
+.dark-card{background:#111510;border:1px solid #30372e;color:white;border-radius:12px;padding:30px;transition:transform 0.3s ease}
+.dark-card:hover{transform:translateY(-4px)}
+.dark-card p{color:#aeb5aa;margin-top:8px}
+
+/* Contatti / Location */
+.location{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.map{display:block;min-height:340px;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.map img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85);transition:transform 0.6s ease}
+.map:hover img{transform:scale(1.04)}
+.map:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.48),rgba(0,0,0,.08))}
+.map-label{position:absolute;z-index:1;left:28px;bottom:25px;font-weight:900;font-size:1.2rem}
+.map-label small{display:block;font-size:.75rem;color:#d7ddd3;margin-top:5px}
+
+footer{border-top:1px solid var(--line);padding:45px 0;color:var(--muted);font-size:.85rem}
+
+/* Keyframes base */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+.animate-on-load {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@media(max-width:850px){
+  .nav { justify-content: center; }
+  nav { justify-content: center; }
+}
+
+@media(max-width:760px){
+.container{width:min(calc(100% - 28px),var(--max))}
+.hero{min-height:88vh;background-position:center}
+.hero-content{padding-top:90px; padding-bottom:45px}
+.info-grid,.location{grid-template-columns:1fr}
+.gallery{grid-template-columns:1fr 1fr;grid-template-rows:180px 180px 180px}
+.photo.big{grid-row:span 2}
+.section-head{display:block}
+.section-head p{margin-top:18px}
+.map{min-height:250px}
+nav { gap: 12px; font-size: 0.8rem; }
+}
+</style>
+
+<style>
+/* Pre-loader */
+.loader{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.loader-logo{
+  font-weight:900;
+  letter-spacing:.04em;
+  font-size:clamp(1.4rem, 4vw, 2.2rem);
+  text-transform:uppercase;
+  white-space:nowrap;
+  animation:loaderPulse 1s ease-in-out infinite;
+}
+.loader-logo span{color:var(--accent)}
+@keyframes loaderPulse{
+  0%{opacity:.35; transform:scale(.97)}
+  50%{opacity:1; transform:scale(1)}
+  100%{opacity:.35; transform:scale(.97)}
+}
+body.site-ready .loader{display:none}
+
+/* Fallback CSS puro: nasconde il loader dopo 1s anche se il JS non viene eseguito
+   (es. anteprime HTML su Android/file manager con JavaScript disabilitato) */
+.loader{
+  animation:loaderHide 0s ease-in 1s forwards;
+}
+@keyframes loaderHide{
+  to{ opacity:0; visibility:hidden; pointer-events:none; }
+}
+</style>
+
+</head>
+<body>
+
+<div id="loader" class="loader" aria-hidden="true">
+  <div class="loader-logo">VALLUNGA <span>RC</span> TRACK</div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">VALLUNGA <span>RC</span> TRACK</a>
+    <nav>
+      <a href="#home" class="active" data-en="Home">Home</a>
+      <a href="#pista" data-en="Track">La pista</a>
+      <a href="#aperture-news" data-en="Openings / News">Aperture / News</a>
+      <a href="#gallery" data-en="Gallery">Gallery</a>
+      <a href="#regolamento" data-en="Rules">Regolamento</a>
+      <a href="#prezzi" data-en="Prices">Prezzi</a>
+      <a href="#contatti" data-en="How to get here / Contact">Come arrivare / Contatti</a>
+      <div class="lang-switch">
+        <button type="button" class="lang-btn active" data-lang-btn="it">IT</button>
+        <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <!-- Video di sottofondo: carica il tuo file "hero-video.mp4" nella stessa
+       cartella di questo index.html. Finché non lo aggiungi, verrà mostrata
+       l'immagine di fallback (poster) qui sotto, quindi il sito funziona
+       comunque. -->
+  <video class="hero-video" autoplay muted loop playsinline poster="IL_TRACCIATO.jpeg">
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="kicker" data-en="Piea (AT) · Piedmont · Outdoor RC">Piea (AT) · Piemonte · Outdoor RC</div>
+    <h1 data-en="Throttle.<br>Dirt.<br>Laps.">Gas.<br>Terra.<br>Giri.</h1>
+    <p data-en="A track dedicated to 1:10 scale electric RC buggies and short-course trucks, set amidst the greenery of Piea, about 45 minutes from Turin.">Una pista dedicata a buggy e short course RC 1:10 elettrici, immersa nel verde di Piea, a circa 45 minuti da Torino.</p>
+    <div class="hero-tags">
+      <span class="tag" data-en="Outdoor Track">Pista Outdoor</span>
+      <span class="tag" data-en="1:10 scale electric"> scala 1:10 Elettrico</span>
+      <span class="tag" data-en="Private Club">Club Privato</span>
+    </div>
+    <div class="buttons">
+      <a class="btn primary" href="#pista" data-en="DISCOVER THE TRACK">SCOPRI LA PISTA</a>
+      <a class="btn" href="#contatti" data-en="HOW TO GET THERE">COME ARRIVARE</a>
+    </div>
+  </div>
+</section>
+
+<section id="pista">
+  <div class="container animate-on-load">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Vallunga RC Track</div>
+        <h2 data-en="A track built<br>for having fun.">Una pista fatta<br>per divertirsi.</h2>
+      </div>
+      <p data-en="A setting dedicated to enthusiasts: an outdoor track, a drivers' area, and space to spend the day driving your own model.">Un ambiente dedicato agli appassionati: pista outdoor, area piloti e spazio per passare una giornata a girare con il proprio modello.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><strong>1:10 Electric</strong><p data-en="A track designed for 1:10 electric buggies and short course.">Pista pensata per buggy e short course 1:10 elettrici.</p></div>
+      <div class="card"><strong data-en="Outdoor">Outdoor</strong><p data-en="
+A track set amidst greenery, featuring a 7mm-high synthetic grass surface very similar to the carpeting found on some indoor tracks.">Un tracciato immerso nel verde, con fondo in erba sintetica alta 7mm, molto simile al tappeto di alcuni tracciati indoor.</p></div>
+      <div class="card"><strong data-en="Private Club">Private Club</strong><p data-en="Access is organized on a club basis, with rules and management dedicated to members. An annual membership is required to ride here.">Accesso organizzato come circolo, con regole e gestione dedicate ai soci. Per poter venire a girare è necessario tesserarsi annualmente.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="aperture-news">
+  <div class="container animate-on-load">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" data-en="Stay in touch">Restiamo in contatto</div>
+        <h2 data-en="Openings &amp; News.">Aperture &amp; News.</h2>
+      </div>
+      <p data-en="Track opening dates and club announcements. Check here before you come to ride!">Date di apertura pista e comunicazioni del club. Controlla qui prima di venire a girare!</p>
+    </div>
+
+    <div class="an-grid">
+
+      <!-- ============================================================ -->
+      <!-- APERTURE — come aggiornare:                                   -->
+      <!-- Ogni apertura è una riga:                                     -->
+      <!-- <div class="apertura-item" data-en="TESTO IN INGLESE">        -->
+      <!--   TESTO IN ITALIANO                                           -->
+      <!-- </div>                                                        -->
+      <!-- Per aggiungerne una: copia una riga intera, cambia il testo   -->
+      <!-- italiano dentro il tag e il testo inglese nell'attributo      -->
+      <!-- data-en="...". Se non hai tempo di tradurre, scrivi lo        -->
+      <!-- stesso testo italiano anche dentro data-en, altrimenti in     -->
+      <!-- inglese quella riga sparirà/non si aggiornerà.                -->
+      <!-- Per toglierne una, cancella l'intera riga (da <div> a </div>) -->
+      <!-- ============================================================ -->
+      <div class="an-block">
+        <h3 data-en="Openings">Aperture</h3>
+        <div class="apertura-list">
+          <div class="apertura-item" data-en="Open Saturday, September 5, from 10:00 a.m. to 6:00 p.m.">Sabato 5 settembre aperti dalle 10.00 alle 18.00</div>
+          <div class="apertura-item" data-en="Closed on Sunday, September 6">Domenica 6 settembre chiuso </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- NEWS — come aggiornare:                                       -->
+      <!-- Cambia il testo italiano dentro <div class="news-text">...    -->
+      <!-- </div> e il testo inglese nell'attributo data-en="...".       -->
+      <!-- Non serve tenere uno storico: scrivi solo l'informazione      -->
+      <!-- attuale, in entrambe le lingue.                                -->
+      <!-- ============================================================ -->
+      <div class="an-block">
+        <h3 data-en="News">News</h3>
+        <div class="news-text" data-en="Final free opening of the year before the official opening next year.">Ultima apertura dell'anno gratuita prima dell'apertura ufficiale il prossimo anno.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container animate-on-load">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" data-en="The track">La pista</div>
+        <h2 data-en="This is Vallunga.">Questa è Vallunga.</h2>
+      </div>
+      <p data-en="A track built amidst the greenery, featuring jumps, curves, and changes of pace. An oasis for enthusiasts.">Una pista costruita nel verde, con salti, curve e cambi di ritmo. Un'oasi per gli appassionati.</p>
+    </div>
+    <div class="gallery">
+      <div class="photo big"><img src="IL_TRACCIATO.jpeg" alt="Vista della pista"><span data-en="THE TRACK">IL TRACCIATO</span></div>
+      <div class="photo"><img src="CURVE_E_SALTI.png" alt="Curve e salti"><span data-en="CORNERS &amp; JUMPS">CURVE E SALTI</span></div>
+      <div class="photo"><img src="IMMERSA_NEL_VERDE.jpeg" alt=""><span data-en="SURROUNDED BY GREENERY">IMMERSA NEL VERDE</span></div>
+      <div class="photo"><img src="AREA_PISTA.png" alt="Area pista"><span data-en="PIT AREA">AREA BOX</span></div>
+      <div class="photo buggy"><img src="BUGGY_E_SHORT_COURSE.jpg" alt="Buggy e short course 1:10"><span data-en="1/10 BUGGY">BUGGY E SHORT COURSE 1:10</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="regolamento">
+  <div class="container animate-on-load">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" data-en="The rules">Le regole</div>
+        <h2 data-en="Rules.">Regolamento.</h2>
+      </div>
+      <p data-en="To make sure everyone can enjoy the track safely, please follow our track rules.">Per garantire a tutti il massimo divertimento in totale sicurezza, ti chiediamo di rispettare le regole della nostra pista.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><strong data-en="Safety">Sicurezza</strong><p data-en="Always pay close attention on and off the track. Common sense and prevention are essential.">Presta sempre la massima attenzione dentro e fuori dal tracciato. Il buon senso e la prevenzione sono fondamentali.</p></div>
+      <div class="card"><strong data-en="Driver stand behavior">Comportamento sul palco</strong><p data-en="Stay focused, do not block others' view, and communicate clearly during marshaling.">Mantieni la concentrazione, non ostacolare la visuale degli altri e comunica in modo chiaro durante i recuperi.</p></div>
+      <div class="card"><strong data-en="Pit area">Area paddock</strong><p data-en="Keep your pit space tidy, dispose of waste properly, and charge LiPo batteries safely.">Mantieni in ordine la tua postazione, smaltisci i rifiuti e ricarica le batterie LiPo in totale sicurezza.</p></div>
+      <div class="card"><strong data-en="Liability">Responsabilità</strong><p data-en="Each driver is responsible for their own model. The club accepts no liability for damage to property or persons.">Ogni pilota è responsabile del proprio modello. Il club declina ogni responsabilità per eventuali danni a cose o persone.</p></div>
+      <div class="card"><strong data-en="Respect for other drivers">Rispetto degli altri piloti</strong><p data-en="Sportsmanship first. Make way for overtaking during practice and always keep a friendly attitude.">Sportività prima di tutto. Agevola i sorpassi durante le prove e mantieni sempre un atteggiamento amichevole.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="info" id="prezzi">
+  <div class="container animate-on-load">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" data-en="Access">Accesso</div>
+        <h2 data-en="How much does it cost?">Quanto costa?</h2>
+      </div>
+      <p data-en="A simple structure: annual membership plus entry each time you come to ride.">Una struttura semplice: tessera annuale e ingresso quando vieni a girare.</p>
+    </div>
+    <div class="info-grid">
+      <div class="dark-card"><div class="eyebrow" data-en="Annual membership">Tessera annuale</div><div class="price">5€</div><p data-en="To become a member of the club.">Per entrare a far parte del circolo.</p></div>
+      <div class="dark-card"><div class="eyebrow" data-en="Entry">Ingresso</div><div class="price">10€</div><p data-en="Contribution for a day of track use.">Contributo per la giornata di utilizzo della pista.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="container animate-on-load">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow" data-en="Where we are">Dove siamo</div>
+        <h2 data-en="Piea, Piedmont.">Piea, Piemonte.</h2>
+      </div>
+      <p data-en="A track set in the greenery, easily reached from Turin and the Asti area.">Una pista immersa nel verde, facilmente raggiungibile da Torino e dall'astigiano.</p>
+    </div>
+    <div class="location">
+      <a class="map" id="mapPreview" href="MAPPA.png" rel="noopener"><img src="MAPPA.png" alt="Mappa per raggiungere il circuito"><div class="map-label"><small data-en=""></small></div></a>
+      <div class="card">
+        <strong>Vallunga RC Track</strong>
+        <p data-en="Piea (AT), Piedmont<br>About 45 minutes from Turin">Piea (AT), Piemonte<br>A circa 50 minuti da Torino</p>
+        
+        <!-- SEZIONE CONTATTI E SOCIAL -->
+        <div class="contact-list">
+          <div class="contact-item">
+            <span>📸</span> <a href="https://www.instagram.com/vallunga_rc_track/" target="_blank" rel="noopener">Instagram: @vallunga_rc_track</a>
+          </div>
+          <div class="contact-item">
+            <span>👥</span> <a href="https://www.facebook.com/profile.php?id=61588258022632&amp;locale=it_IT" target="_blank" rel="noopener">Facebook: Vallunga RC Track</a>
+          </div>
+          <div class="contact-item">
+            <span>💬</span> <a href="https://chat.whatsapp.com/De3fw2r462P5nekmuxI2WM" target="_blank" rel="noopener" data-en="WhatsApp: Join the group">WhatsApp: Entra nel gruppo</a>
+          </div>
+        </div>
+
+        <div class="buttons" style="margin-top:20px;">
+          <a class="btn primary" href="https://www.google.com/maps/place/Vallunga+RC+Track/@45.0160226,8.06177,227m/data=!3m1!1e3!4m6!3m5!1s0x4787c3a2a5363123:0xdd70b9f37d40b9eb!8m2!3d45.0162492!4d8.0616757!16s%2Fg%2F11zx0x8xfc?entry=ttu&amp;g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" data-en="OPEN IN MAPS">APRILI IN MAPPE</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <strong data-en="Where to eat">Dove mangiare</strong>
+      <p data-en="Panetteria, a short drive from the track. Open Mon–Sat 7:00–13:00, Sunday 7:00–12:30.">Panetteria, a pochi minuti dalla pista. Aperta lun–sab 7.00–13.00, domenica 7.00–12.30.</p>
+      <div class="buttons" style="margin-top:20px;">
+        <a class="btn primary" href="https://maps.app.goo.gl/9UXfC6UTDe24DxXE7?g_st=iw" target="_blank" rel="noopener" data-en="OPEN IN MAPS">APRILA IN MAPPE</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Album foto: si apre cliccando una foto della gallery -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi" type="button">&times;</button>
+  <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Foto precedente" type="button">&#10094;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav next" id="lightboxNext" aria-label="Foto successiva" type="button">&#10095;</button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<footer>
+  <div class="container" data-en="© 2026 Vallunga RC Track · Piea (AT) · Information website">© 2026 Vallunga RC Track · Piea (AT) · Sito informativo</div>
+</footer>
+
+
+<script>
+(function () {
+  const MIN_LOADING_MS = 1000;
+
+  function openSite() {
+    const loader = document.getElementById('loader');
+    if (!loader) return;
+
+    loader.style.transition = 'opacity 280ms ease';
+    loader.style.opacity = '0';
+    loader.style.pointerEvents = 'none';
+
+    setTimeout(function () {
+      loader.style.display = 'none';
+      document.body.classList.add('site-ready');
+    }, 300);
+  }
+
+  // Indipendente da immagini, font, fetch o window.onload: si apre sempre dopo 1s.
+  setTimeout(openSite, MIN_LOADING_MS);
+})();
+
+// Evidenzia la voce di menu corrispondente alla sezione visibile
+(function () {
+  const sections = Array.from(document.querySelectorAll('main section[id], .hero[id]'));
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const headerOffset = 90; // altezza approssimativa dell'header fisso
+  let ticking = false;
+
+  function setActive(id) {
+    navLinks.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+    });
+  }
+
+  function updateActiveSection() {
+    ticking = false;
+    const scrollPos = window.scrollY + headerOffset + 1;
+
+    const atBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2);
+    if (atBottom) {
+      setActive(sections[sections.length - 1].id);
+      return;
+    }
+
+    let currentId = sections[0].id;
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].offsetTop <= scrollPos) {
+        currentId = sections[i].id;
+      } else {
+        break;
+      }
+    }
+    setActive(currentId);
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateActiveSection);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateActiveSection);
+  updateActiveSection();
+})();
+
+// Selettore lingua IT / EN
+(function () {
+  const STORAGE_KEY = 'vallunga-lang';
+  const langButtons = document.querySelectorAll('[data-lang-btn]');
+  const translatable = document.querySelectorAll('[data-en]');
+  const htmlEl = document.documentElement;
+
+  // Salva il testo italiano originale di ogni elemento, una sola volta
+  translatable.forEach(function (el) {
+    if (!el.dataset.it) { el.dataset.it = el.innerHTML; }
+  });
+
+  function applyLang(lang) {
+    translatable.forEach(function (el) {
+      el.innerHTML = (lang === 'en') ? el.dataset.en : el.dataset.it;
+    });
+    langButtons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
+    });
+    htmlEl.setAttribute('lang', lang);
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  langButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.getAttribute('data-lang-btn'));
+    });
+  });
+
+  let saved = null;
+  try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+  if (saved === 'en') { applyLang('en'); }
+})();
+
+// Album foto (lightbox) — usato dalla Gallery e dalla foto Mappa
+(function () {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+  const btnClose = document.getElementById('lightboxClose');
+  const btnPrev = document.getElementById('lightboxPrev');
+  const btnNext = document.getElementById('lightboxNext');
+
+  let items = [];
+  let currentIndex = 0;
+
+  function show(index) {
+    currentIndex = (index + items.length) % items.length;
+    const item = items[currentIndex];
+    lightboxImg.src = item.src;
+    lightboxImg.alt = item.alt || '';
+    lightboxCaption.textContent = item.caption || '';
+    const multi = items.length > 1;
+    lightboxCounter.textContent = multi ? (currentIndex + 1) + ' / ' + items.length : '';
+    btnPrev.style.display = multi ? 'flex' : 'none';
+    btnNext.style.display = multi ? 'flex' : 'none';
+  }
+
+  function open(newItems, startIndex) {
+    items = newItems;
+    show(startIndex || 0);
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  // Gallery: 5 foto navigabili con le frecce
+  const photos = Array.from(document.querySelectorAll('.gallery .photo'));
+  const galleryItems = photos.map(function (photo) {
+    const img = photo.querySelector('img');
+    const label = photo.querySelector('span');
+    return { src: img.src, alt: img.alt || '', caption: label ? label.textContent : '' };
+  });
+  photos.forEach(function (photo, index) {
+    photo.addEventListener('click', function () { open(galleryItems, index); });
+  });
+
+  // Mappa: singola foto, senza frecce
+  const mapPreview = document.getElementById('mapPreview');
+  if (mapPreview) {
+    mapPreview.addEventListener('click', function (e) {
+      e.preventDefault();
+      const img = mapPreview.querySelector('img');
+      open([{ src: img.src, alt: img.alt || '', caption: img.alt || '' }], 0);
+    });
+  }
+
+  btnClose.addEventListener('click', close);
+  btnPrev.addEventListener('click', function () { show(currentIndex - 1); });
+  btnNext.addEventListener('click', function () { show(currentIndex + 1); });
+
+  // Chiudi cliccando fuori dalla foto/testo
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) { close(); }
+  });
+
+  // Tastiera: frecce e Esc
+  document.addEventListener('keydown', function (e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') { close(); }
+    if (e.key === 'ArrowLeft') { show(currentIndex - 1); }
+    if (e.key === 'ArrowRight') { show(currentIndex + 1); }
+  });
+})();
+</script>
+
+</body>
+</html>
